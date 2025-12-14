@@ -1,0 +1,261 @@
+import React, { useState } from 'react';
+import { Phone, MapPin, Clock, Mail, Send } from 'lucide-react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Label } from './ui/label';
+import { Textarea } from './ui/textarea';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { toast } from 'sonner';
+
+export function BookAppointment() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    vehicle: '',
+    date: '',
+    time: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real application, this would send data to a backend
+    toast.success('Appointment request received! We\'ll contact you shortly to confirm.');
+    setFormData({
+      name: '',
+      phone: '',
+      vehicle: '',
+      date: '',
+      time: '',
+      message: ''
+    });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  return (
+    <div>
+      {/* Header */}
+      <section className="bg-[#1e3a8a] text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl mb-4">Book an Appointment</h1>
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            Fill out the form below and we'll get back to you shortly to confirm your appointment.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Appointment Form */}
+            <div className="lg:col-span-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Request an Appointment</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="name">Full Name *</Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          placeholder="John Doe"
+                          className="mt-1"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="phone">Phone Number *</Label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          required
+                          placeholder="(555) 123-4567"
+                          className="mt-1"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="vehicle">Vehicle Type *</Label>
+                      <Input
+                        id="vehicle"
+                        name="vehicle"
+                        value={formData.vehicle}
+                        onChange={handleChange}
+                        required
+                        placeholder="e.g., 2020 Toyota Camry"
+                        className="mt-1"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="date">Preferred Date *</Label>
+                        <Input
+                          id="date"
+                          name="date"
+                          type="date"
+                          value={formData.date}
+                          onChange={handleChange}
+                          required
+                          className="mt-1"
+                          min={new Date().toISOString().split('T')[0]}
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="time">Preferred Time *</Label>
+                        <Input
+                          id="time"
+                          name="time"
+                          type="time"
+                          value={formData.time}
+                          onChange={handleChange}
+                          required
+                          className="mt-1"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="message">Additional Information</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Let us know if you have any specific concerns or service requests..."
+                        className="mt-1 min-h-[120px]"
+                      />
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-[#eab308] hover:bg-[#ca9a04] text-black"
+                    >
+                      <Send className="w-4 h-4 mr-2" />
+                      Submit Appointment Request
+                    </Button>
+
+                    <p className="text-sm text-muted-foreground text-center">
+                      * We'll contact you to confirm your appointment time
+                    </p>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Contact Us</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-[#1e3a8a] mt-0.5" />
+                    <div>
+                      <div className="text-sm text-muted-foreground">Phone</div>
+                      <a href="tel:+15551234567" className="hover:text-[#1e3a8a]">
+                        (555) 123-4567
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-[#1e3a8a] mt-0.5" />
+                    <div>
+                      <div className="text-sm text-muted-foreground">Address</div>
+                      <div>MPC5+CXC, Sai Nagar Rd, Sai Nagar</div>
+                      <div>Mamurdi, Pimpri-Chinchwad</div>
+                      <div>Dehu Road, Maharashtra 412101</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-[#1e3a8a] mt-0.5" />
+                    <div>
+                      <div className="text-sm text-muted-foreground">Email</div>
+                      <a href="mailto:info@tireworks.com" className="hover:text-[#1e3a8a]">
+                        info@tireworks.com
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Business Hours</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-start gap-3 mb-4">
+                    <Clock className="w-5 h-5 text-[#1e3a8a] mt-0.5" />
+                    <div className="flex-1">
+                      <div className="space-y-2">
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Monday - Friday</span>
+                          <span>8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Saturday</span>
+                          <span>9:00 AM - 4:00 PM</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Sunday</span>
+                          <span>Closed</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gray-50">
+                <CardContent className="p-6">
+                  <h4 className="mb-2">Walk-ins Welcome!</h4>
+                  <p className="text-sm text-muted-foreground">
+                    We accept walk-in customers, but booking an appointment ensures minimal wait time.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Map Section */}
+          <div className="mt-12 max-w-6xl mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle>Find Us</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <MapPin className="w-12 h-12 mx-auto mb-2" />
+                    <p>Google Maps Embed</p>
+                    <p className="text-sm">MPC5+CXC, Sai Nagar Rd, Sai Nagar, Mamurdi, Pimpri-Chinchwad, Dehu Road, Maharashtra 412101</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                  * In production, this would be replaced with an actual Google Maps embed showing the shop location.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
