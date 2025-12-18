@@ -81,7 +81,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="overflow-hidden rounded-lg shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1681815231883-8a68a0af6466?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGVlbCUyMGFsaWdubWVudCUyMG1hY2hpbmV8ZW58MXx8fHwxNzY1NzEzOTQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="/IMG_20251217_143411.jpg"
                 alt="Modern alignment equipment"
                 className="w-full h-80 object-cover"
               />
@@ -94,7 +94,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
             </div>
             <div className="overflow-hidden rounded-lg shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1597086657068-7e10f874e8c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwcmVwYWlyJTIwc2hvcCUyMGludGVyaW9yfGVufDF8fHx8MTc2NTYyMDM0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="/IMG_20251217_144137.jpg"
                 alt="Professional service bay"
                 className="w-full h-80 object-cover"
               />

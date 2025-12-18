@@ -9,11 +9,13 @@ export function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-white rounded flex items-center justify-center">
-                <span className="text-[#1e3a8a]">TW</span>
-              </div>
+              <img 
+                src="/logo.svg" 
+                alt="TireWorks Logo" 
+                className="w-10 h-10"
+              />
               <div className="flex flex-col">
-                <span>TireWorks</span>
+                <span className="font-semibold">TireWorks</span>
                 <span className="text-xs text-white/70">Alignment & Balancing</span>
               </div>
             </div>

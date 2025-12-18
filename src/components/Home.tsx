@@ -30,22 +30,22 @@ export function Home({ setCurrentPage }: HomeProps) {
 
   const showcaseImages = [
     {
-      url: "https://images.unsplash.com/photo-1596512667203-a23e7b5c8df0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aXJlJTIwYWxpZ25tZW50JTIwZXF1aXBtZW50fGVufDF8fHx8MTc2NTcxNDMxOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      url: "/IMG_20251217_143411.jpg",
       title: "Precision Wheel Alignment",
       description: "Advanced machines ensure accurate alignment for safer driving."
     },
     {
-      url: "https://images.unsplash.com/photo-1634317189572-daa605450c5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aXJlJTIwYmFsYW5jaW5nfGVufDF8fHx8MTc2NTcxNDMyMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      url: "/IMG_20251217_144137.jpg",
       title: "Professional Tire Balancing",
       description: "Eliminate vibrations and extend your tire life with expert balancing."
     },
     {
-      url: "https://images.unsplash.com/photo-1619505372149-07875c35b313?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBtZWNoYW5pYyUyMHdvcmtpbmd8ZW58MXx8fHwxNzY1NzE0MzE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      url: "/IMG_20251217_144259.jpg",
       title: "Experienced Technicians",
       description: "Our certified mechanics provide quality service on every vehicle."
     },
     {
-      url: "https://images.unsplash.com/photo-1702146713870-8cdd7ab983fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwc2hvcCUyMGJheXxlbnwxfHx8fDE3NjU3MTQzMjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      url: "/IMG_20251217_145036.jpg",
       title: "Modern Service Bays",
       description: "Clean, well-equipped facility for fast and efficient service."
     }
@@ -71,30 +71,17 @@ export function Home({ setCurrentPage }: HomeProps) {
 
   return (
     <div>
-      {/* Hero Section with Video */}
-      <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-        {/* Video Background - In production, replace with actual video */}
+        <section className="relative h-[500px] md:h-[600px] overflow-hidden">
+        {/* Header Background Image */}
         <div className="absolute inset-0 bg-gray-900">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover opacity-50"
-            poster="https://images.unsplash.com/photo-1597086657068-7e10f874e8c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwcmVwYWlyJTIwc2hvcCUyMGludGVyaW9yfGVufDF8fHx8MTc2NTYyMDM0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          >
-            {/* In production, add actual video source */}
-            <source src="/path-to-your-video.mp4" type="video/mp4" />
-          </video>
-          {/* Fallback image for browsers that don't support video */}
           <img
-            src="https://images.unsplash.com/photo-1597086657068-7e10f874e8c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwcmVwYWlyJTIwc2hvcCUyMGludGVyaW9yfGVufDF8fHx8MTc2NTYyMDM0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Auto shop"
-            className="w-full h-full object-cover opacity-50"
+            src="/header.jpg"
+            alt="TireWorks Shop"
+            className="w-full h-full object-cover"
           />
-        </div>
+          </div>
         
-        {/* Dark Overlay */}
+        {/* Dark Overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/60"></div>
         
         {/* Content */}
@@ -124,12 +111,13 @@ export function Home({ setCurrentPage }: HomeProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {showcaseImages.map((image, index) => (
               <div key={index} className="group">
-                <div className="overflow-hidden rounded-lg mb-4">
+                <div className="overflow-hidden rounded-lg mb-4 relative">
                   <img
                     src={image.url}
                     alt={image.title}
                     className="w-full h-[400px] md:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-black/50 pointer-events-none"></div>
                 </div>
                 <div className="px-2">
                   <h3 className="mb-2">{image.title}</h3>

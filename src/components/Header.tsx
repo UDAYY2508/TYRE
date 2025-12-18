@@ -32,9 +32,11 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
             onClick={() => setCurrentPage('home')}
             className="flex items-center gap-2"
           >
-            <div className="w-10 h-10 bg-[#1e3a8a] rounded flex items-center justify-center">
-              <span className="text-white">TW</span>
-            </div>
+            <img 
+              src="/logo.svg" 
+              alt="TireWorks Logo" 
+              className="w-10 h-10"
+            />
             <div className="flex flex-col items-start">
               <span className="text-[#1e3a8a]">TireWorks</span>
               <span className="text-xs text-muted-foreground">Alignment & Balancing</span>
