@@ -112,7 +112,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
       {/* Why Choose Us */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl text-center mb-12">Why Choose TireWorks?</h2>
+          <h2 className="text-3xl text-center mb-12">Why Choose VABE?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="text-center">
               <div className="w-12 h-12 bg-[#eab308] rounded-full flex items-center justify-center mx-auto mb-3">

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Clock, Mail, Send } from 'lucide-react';
+import { Phone, MapPin, Clock, Mail, Send, Loader2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 export function BookAppointment() {
   const [formData, setFormData] = useState({
@@ -16,19 +18,54 @@ export function BookAppointment() {
     time: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    toast.success('Appointment request received! We\'ll contact you shortly to confirm.');
-    setFormData({
-      name: '',
-      phone: '',
-      vehicle: '',
-      date: '',
-      time: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Check if EmailJS is configured
+      if (!EMAILJS_CONFIG.SERVICE_ID || !EMAILJS_CONFIG.TEMPLATE_ID || !EMAILJS_CONFIG.PUBLIC_KEY) {
+        throw new Error('EmailJS is not configured. Please check the setup instructions.');
+      }
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_phone: formData.phone,
+        vehicle: formData.vehicle,
+        preferred_date: formData.date,
+        preferred_time: formData.time,
+        message: formData.message || 'No additional information provided',
+        to_email: EMAILJS_CONFIG.RECEIVER_EMAIL || 'your-email@example.com',
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      toast.success('Appointment request sent successfully! We\'ll contact you shortly to confirm.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        vehicle: '',
+        date: '',
+        time: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error('Failed to send appointment request. Please try again or call us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -145,10 +182,20 @@ export function BookAppointment() {
 
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#eab308] hover:bg-[#ca9a04] text-black"
+                      className="w-full bg-[#eab308] hover:bg-[#ca9a04] text-black disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={isSubmitting}
                     >
-                      <Send className="w-4 h-4 mr-2" />
-                      Submit Appointment Request
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 mr-2" />
+                          Submit Appointment Request
+                        </>
+                      )}
                     </Button>
 
                     <p className="text-sm text-muted-foreground text-center">
@@ -241,15 +288,21 @@ export function BookAppointment() {
                 <CardTitle>Find Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="w-12 h-12 mx-auto mb-2" />
-                    <p>Google Maps Embed</p>
-                    <p className="text-sm">MPC5+CXC, Sai Nagar Rd, Sai Nagar, Mamurdi, Pimpri-Chinchwad, Dehu Road, Maharashtra 412101</p>
-                  </div>
+                <div className="w-full h-96 rounded-lg overflow-hidden border">
+                  <iframe
+                    src="https://www.google.com/maps?q=MPC5%2BCXC,+Sai+Nagar+Rd,+Sai+Nagar,+Mamurdi,+Pimpri-Chinchwad,+Dehu+Road,+Maharashtra+412101&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="VABE Location Map"
+                    className="w-full h-full"
+                  ></iframe>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                  * In production, this would be replaced with an actual Google Maps embed showing the shop location.
+                  Visit us at: MPC5+CXC, Sai Nagar Rd, Sai Nagar, Mamurdi, Pimpri-Chinchwad, Dehu Road, Maharashtra 412101
                 </p>
               </CardContent>
             </Card>

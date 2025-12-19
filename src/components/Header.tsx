@@ -34,12 +34,12 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
           >
             <img 
               src="/logo.svg" 
-              alt="TireWorks Logo" 
+              alt="VABE Logo" 
               className="w-10 h-10"
             />
             <div className="flex flex-col items-start">
-              <span className="text-[#1e3a8a]">TireWorks</span>
-              <span className="text-xs text-muted-foreground">Alignment & Balancing</span>
+              <span className="text-[#1e3a8a]">VABE</span>
+              <span className="text-xs text-muted-foreground">VEHICLES ALIGNMENT BALANCING ENTERPRISE</span>
             </div>
           </button>
 

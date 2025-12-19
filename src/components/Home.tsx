@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, MessageCircle, Wrench, Settings, CheckCircle, Star } from 'lucide-react';
+import { Phone, MapPin, Wrench, Settings, CheckCircle, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 
@@ -76,7 +76,7 @@ export function Home({ setCurrentPage }: HomeProps) {
         <div className="absolute inset-0 bg-gray-900">
           <img
             src="/header.jpg"
-            alt="TireWorks Shop"
+            alt="VABE Shop"
             className="w-full h-full object-cover"
           />
           </div>
@@ -205,13 +205,6 @@ export function Home({ setCurrentPage }: HomeProps) {
                 <div className="text-lg">Sai Nagar, Mamurdi, Pimpri-Chinchwad</div>
               </div>
             </div>
-            <Button 
-              className="bg-[#25d366] hover:bg-[#1fb854] text-white"
-              onClick={() => window.open('https://wa.me/15551234567', '_blank')}
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp Us
-            </Button>
           </div>
         </div>
       </section>

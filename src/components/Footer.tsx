@@ -11,12 +11,12 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <img 
                 src="/logo.svg" 
-                alt="TireWorks Logo" 
+                alt="VABE Logo" 
                 className="w-10 h-10"
               />
               <div className="flex flex-col">
-                <span className="font-semibold">TireWorks</span>
-                <span className="text-xs text-white/70">Alignment & Balancing</span>
+                <span className="font-semibold">VABE</span>
+                <span className="text-xs text-white/70">VEHICLES ALIGNMENT BALANCING ENTERPRISE</span>
               </div>
             </div>
             <p className="text-white/80 text-sm">
@@ -98,7 +98,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/70">
-          <p>&copy; {new Date().getFullYear()} TireWorks. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} VABE. All rights reserved.</p>
         </div>
       </div>
     </footer>
