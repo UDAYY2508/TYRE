@@ -30,43 +30,44 @@ export function Home({ setCurrentPage }: HomeProps) {
 
   const showcaseImages = [
     {
-      url: "/IMG_20251217_143411.jpg",
-      title: "Precision Wheel Alignment",
-      description: "Advanced machines ensure accurate alignment for safer driving."
+      url: "/Rectangle 1.png",
+      title: "Quality Service",
+      description: "Professional tire and wheel services."
     },
     {
-      url: "/IMG_20251217_144137.jpg",
-      title: "Professional Tire Balancing",
-      description: "Eliminate vibrations and extend your tire life with expert balancing."
+      url: "/Rectangle 2.png",
+      title: "Expert Technicians",
+      description: "Experienced team ready to serve you."
     },
     {
-      url: "/IMG_20251217_144259.jpg",
-      title: "Experienced Technicians",
-      description: "Our certified mechanics provide quality service on every vehicle."
+      url: "/Rectangle 3.png",
+      title: "Modern Equipment",
+      description: "State-of-the-art tools for precision work."
     },
     {
-      url: "/IMG_20251217_145036.jpg",
-      title: "Modern Service Bays",
-      description: "Clean, well-equipped facility for fast and efficient service."
+      url: "/Rectangle 4.png",
+      title: "Reliable Service",
+      description: "Trusted by customers for quality results."
     }
   ];
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      text: 'Quick and professional service! My car drives like new after the alignment. Highly recommend for honest pricing.',
+      name: 'Harshad',
+      text: 'I recently used VABE for my travel needs, and i had fantastic experience! The interiors of vehicle were great, clean and comfortable.',
       rating: 5
     },
     {
-      name: 'Michael Chen',
-      text: 'Best tire shop in town. The staff explained everything clearly and got me back on the road in no time.',
+      name: 'SP lakhe',
+      text: 'VABE offers an exceptional range of vehicle products that are both reasonably priced and high in quality. The hassle-free experience from purchase to installation is commendable, making it a great choice for anyone looking for quality vehicle products.',
       rating: 5
     },
     {
-      name: 'Emma Rodriguez',
-      text: 'Affordable and reliable. They found an issue I didn\'t know about and fixed it the same day. Great team!',
+      name: 'Ganesh sonawane',
+      text: 'I had an excellent interaction with VABE, a vehicle products company. The experience was hassle-free, which made everything easy and smooth.',
       rating: 5
-    }
+    },
+  
   ];
 
   return (
@@ -87,19 +88,46 @@ export function Home({ setCurrentPage }: HomeProps) {
         {/* Content */}
         <div className="relative h-full flex items-center">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl mx-auto text-center">
               <h1 className="text-white text-4xl md:text-6xl mb-4">
-                Professional Wheel Alignment & Tire Services You Can Trust
+                VABE
+                 Tyres and Alignment Services
               </h1>
               <p className="text-white/90 text-lg md:text-xl mb-8">
-                Quick service, affordable pricing, experienced staff
+                VEHICLES ALIGNMENT BALANCING ENTERPRISE
               </p>
-              <Button 
-                onClick={() => setCurrentPage('book')}
-                className="bg-[#eab308] hover:bg-[#ca9a04] text-black px-8 py-6 text-lg"
-              >
-                Book Appointment
-              </Button>
+              <div className="flex justify-center">
+                <Button 
+                  onClick={() => setCurrentPage('book')}
+                  className="bg-[#eab308] hover:bg-[#ca9a04] text-black px-8 py-6 text-lg"
+                >
+                  Book Appointment
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl mb-4 ">About Us</h2>
+              <div className="w-20 h-1 bg-[#eab308] mx-auto"></div>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-700 text-lg leading-relaxed text-center">
+                Welcome to VABE, your trusted partner for professional wheel alignment and tire services. 
+                With years of experience in the automotive industry, we are committed to providing exceptional 
+                service and ensuring your vehicle's safety and performance. Our team of certified technicians 
+                uses state-of-the-art equipment to deliver precise wheel alignment, professional tire balancing, 
+                and comprehensive tire care services. Located in Sai Nagar, Mamurdi, Pimpri-Chinchwad, we pride 
+                ourselves on quick service, honest pricing, and customer satisfaction. Whether you need a simple 
+                tire rotation or complex wheel alignment, we're here to help keep your vehicle running smoothly 
+                and safely.
+              </p>
             </div>
           </div>
         </div>
@@ -110,18 +138,14 @@ export function Home({ setCurrentPage }: HomeProps) {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {showcaseImages.map((image, index) => (
-              <div key={index} className="group">
-                <div className="overflow-hidden rounded-lg mb-4 relative">
+              <div key={index} className="group flex flex-col items-center">
+                <div className="overflow-hidden rounded-lg relative aspect-square w-[80%]">
                   <img
                     src={image.url}
                     alt={image.title}
-                    className="w-full h-[400px] md:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/50 pointer-events-none"></div>
-                </div>
-                <div className="px-2">
-                  <h3 className="mb-2">{image.title}</h3>
-                  <p className="text-muted-foreground text-sm">{image.description}</p>
                 </div>
               </div>
             ))}

@@ -38,7 +38,7 @@ export function BookAppointment() {
         preferred_date: formData.date,
         preferred_time: formData.time,
         message: formData.message || 'No additional information provided',
-        to_email: EMAILJS_CONFIG.RECEIVER_EMAIL || 'your-email@example.com',
+        to_email: EMAILJS_CONFIG.RECEIVER_EMAIL || 'vabe2023@gmail.com',
       };
 
       // Send email using EmailJS
@@ -235,8 +235,8 @@ export function BookAppointment() {
                     <Mail className="w-5 h-5 text-[#1e3a8a] mt-0.5" />
                     <div>
                       <div className="text-sm text-muted-foreground">Email</div>
-                      <a href="mailto:info@tireworks.com" className="hover:text-[#1e3a8a]">
-                        info@tireworks.com
+                      <a href="mailto:vabe2023@gmail.com" className="hover:text-[#1e3a8a]">
+                        vabe2023@gmail.com
                       </a>
                     </div>
                   </div>

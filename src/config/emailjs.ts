@@ -20,6 +20,6 @@ export const EMAILJS_CONFIG = {
   PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '',
 
   // Email address where appointment requests will be sent
-  RECEIVER_EMAIL: import.meta.env.VITE_RECEIVER_EMAIL || 'your-email@example.com',
+  RECEIVER_EMAIL: import.meta.env.VITE_RECEIVER_EMAIL || 'vabe2023@gmail.com',
 };
 

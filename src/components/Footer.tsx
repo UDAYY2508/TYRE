@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, MapPin, Mail } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -36,8 +36,8 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5" />
-                <a href="mailto:info@tireworks.com" className="hover:text-[#eab308] text-white/80">
-                  info@tireworks.com
+                <a href="mailto:vabe2023@gmail.com" className="hover:text-[#eab308] text-white/80">
+                  vabe2023@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-2">
@@ -66,32 +66,6 @@ export function Footer() {
               <div className="flex justify-between">
                 <span>Sunday</span>
                 <span>Closed</span>
-              </div>
-            </div>
-            <div>
-              <h4 className="mb-3">Follow Us</h4>
-              <div className="flex gap-4">
-                <a 
-                  href="#" 
-                  className="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-[#eab308] transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-4 h-4" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-[#eab308] transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-[#eab308] transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
               </div>
             </div>
           </div>

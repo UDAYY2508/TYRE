@@ -77,31 +77,95 @@ export function Services({ setCurrentPage }: ServicesProps) {
       {/* Images Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl text-center mb-8">See Our Work</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h2 className="text-3xl text-center mb-8">Tools and Equipment</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="overflow-hidden rounded-lg shadow-lg">
-              <img
-                src="/IMG_20251217_143411.jpg"
-                alt="Modern alignment equipment"
-                className="w-full h-80 object-cover"
-              />
+              <div className="aspect-square">
+                <img
+                  src="/Rectangle 1.png"
+                  alt="Quality Service"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="bg-white p-4">
-                <h4>State-of-the-Art Equipment</h4>
+                <h4>Tyre Changer and fixing Machine</h4>
                 <p className="text-muted-foreground text-sm mt-1">
-                  We use the latest computerized alignment systems for precision results.
+                Allows safe and quick tyre removal, fitting, and repair without damaging the tyre or rim.
                 </p>
               </div>
             </div>
             <div className="overflow-hidden rounded-lg shadow-lg">
-              <img
-                src="/IMG_20251217_144137.jpg"
-                alt="Professional service bay"
-                className="w-full h-80 object-cover"
-              />
+              <div className="aspect-square">
+                <img
+                  src="/Rectangle 2.png"
+                  alt="Expert Technicians"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="bg-white p-4">
-                <h4>Professional Service</h4>
+                <h4>Air/Nitrogen filling machine</h4>
                 <p className="text-muted-foreground text-sm mt-1">
-                  Our experienced technicians ensure quality work on every vehicle.
+                Provides nitrogen inflation to maintain consistent tyre pressure, improving fuel efficiency and tyre durability.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <div className="aspect-square">
+                <img
+                  src="/Rectangle 3.png"
+                  alt="Modern Equipment"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="bg-white p-4">
+                <h4>Wheel Alignment Machine</h4>
+                <p className="text-muted-foreground text-sm mt-1">
+                Ensures precise wheel alignment for smoother handling, improved vehicle stability, and longer tyre life.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <div className="aspect-square">
+                <img
+                  src="/Rectangle 4.png"
+                  alt="Reliable Service"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="bg-white p-4">
+                <h4>Balancing Machine</h4>
+                <p className="text-muted-foreground text-sm mt-1">
+                Balances wheels accurately to reduce vibrations, ensuring a comfortable ride and even tyre wear.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <div className="aspect-square">
+                <img
+                  src="/Rectangle 5.png"
+                  alt="Professional Care"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="bg-white p-4">
+                <h4>8KV Inverter Backup Support System</h4>
+                <p className="text-muted-foreground text-sm mt-1">
+                Ensures uninterrupted service during power outages, keeping all machines running smoothly.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <div className="aspect-square">
+                <img
+                  src="/Rectangle 6.png"
+                  alt="Customer Satisfaction"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="bg-white p-4">
+                <h4>Customer Satisfaction</h4>
+                <p className="text-muted-foreground text-sm mt-1">
+                  Committed to exceeding expectations on every visit.
                 </p>
               </div>
             </div>
