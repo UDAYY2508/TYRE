@@ -108,7 +108,7 @@ export function BookAppointment() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          placeholder="John Doe"
+                          placeholder=""
                           className="mt-1"
                         />
                       </div>
@@ -121,7 +121,7 @@ export function BookAppointment() {
                           value={formData.phone}
                           onChange={handleChange}
                           required
-                          placeholder="(555) 123-4567"
+                          placeholder=""
                           className="mt-1"
                         />
                       </div>
@@ -217,18 +217,18 @@ export function BookAppointment() {
                     <Phone className="w-5 h-5 text-[#1e3a8a] mt-0.5" />
                     <div>
                       <div className="text-sm text-muted-foreground">Phone</div>
-                      <a href="tel:+15551234567" className="hover:text-[#1e3a8a]">
-                        (555) 123-4567
-                      </a>
+                      <a href="tel:+919370047020" className="hover:text-[#1e3a8a] block">+91 9370047020</a>
+                      <a href="tel:+919427860992" className="hover:text-[#1e3a8a] block">+91 9427860992</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-[#1e3a8a] mt-0.5" />
                     <div>
                       <div className="text-sm text-muted-foreground">Address</div>
-                      <div>MPC5+CXC, Sai Nagar Rd, Sai Nagar</div>
-                      <div>Mamurdi, Pimpri-Chinchwad</div>
-                      <div>Dehu Road, Maharashtra 412101</div>
+                      <div>VABE (Vehicles Alignment Balancing Enterprise)</div>
+                      <div>Gat no 196/1, Besides Morya Fibers</div>
+                      <div>Opp. Orbis School, Gahunje stadium road</div>
+                      <div>Gahunje, Pune 412101</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -253,16 +253,8 @@ export function BookAppointment() {
                     <div className="flex-1">
                       <div className="space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-muted-foreground">Monday - Friday</span>
-                          <span>8:00 AM - 6:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Saturday</span>
-                          <span>9:00 AM - 4:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Sunday</span>
-                          <span>Closed</span>
+                          <span className="text-muted-foreground">All Days</span>
+                          <span>9:00 AM - 9:00 PM</span>
                         </div>
                       </div>
                     </div>
@@ -270,6 +262,16 @@ export function BookAppointment() {
                 </CardContent>
               </Card>
 
+              <Card className="bg-gray-50">
+                <CardContent className="p-6">
+                  <h4 className="mb-2">Payment Options</h4>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div>• Cash</div>
+                    <div>• Google Pay</div>
+                    <div>• Debit / Credit Card (2% extra applicable)</div>
+                  </div>
+                </CardContent>
+              </Card>
               <Card className="bg-gray-50">
                 <CardContent className="p-6">
                   <h4 className="mb-2">Walk-ins Welcome!</h4>
@@ -290,7 +292,7 @@ export function BookAppointment() {
               <CardContent>
                 <div className="w-full h-96 rounded-lg overflow-hidden border">
                   <iframe
-                    src="https://www.google.com/maps?q=MPC5%2BCXC,+Sai+Nagar+Rd,+Sai+Nagar,+Mamurdi,+Pimpri-Chinchwad,+Dehu+Road,+Maharashtra+412101&output=embed"
+                    src="https://www.google.com/maps?q=VABE+Vehicles+Alignment+Balancing+Enterprise,+Gat+no+196/1,+Besides+Morya+Fibers,+Opp.+Orbis+School,+Gahunje+stadium+road,+Gahunje,+Pune+412101&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -300,9 +302,19 @@ export function BookAppointment() {
                     title="VABE Location Map"
                     className="w-full h-full"
                   ></iframe>
+                  <div className="mt-4 text-center">
+                    <a 
+                      href="https://maps.app.goo.gl/PmQY7cvyehS542r26?g_st=awb" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#1e3a8a] hover:underline text-sm"
+                    >
+                      View on Google Maps →
+                    </a>
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Visit us at: MPC5+CXC, Sai Nagar Rd, Sai Nagar, Mamurdi, Pimpri-Chinchwad, Dehu Road, Maharashtra 412101
+                  Visit us at: VABE (Vehicles Alignment Balancing Enterprise), Gat no 196/1, Besides Morya Fibers, Opp. Orbis School, Gahunje stadium road, Gahunje, Pune 412101
                 </p>
               </CardContent>
             </Card>

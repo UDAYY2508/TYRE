@@ -14,7 +14,7 @@ export function Home({ setCurrentPage }: HomeProps) {
     {
       icon: <Settings className="w-8 h-8" />,
       title: 'Wheel Alignment',
-      description: 'Precision alignment to ensure your vehicle drives straight and tires wear evenly.'
+      description: 'Precision alignment to ensure your vehicle drives straight and tyres wear evenly.'
     },
     {
       icon: <Wrench className="w-8 h-8" />,
@@ -23,8 +23,8 @@ export function Home({ setCurrentPage }: HomeProps) {
     },
     {
       icon: <CheckCircle className="w-8 h-8" />,
-      title: 'Tire Check & Rotation',
-      description: 'Complete inspection and rotation to extend tire life and maintain performance.'
+      title: 'Tyre Check & Rotation',
+      description: 'Complete inspection and rotation to extend tyre life and maintain performance.'
     }
   ];
 
@@ -73,12 +73,19 @@ export function Home({ setCurrentPage }: HomeProps) {
   return (
     <div>
         <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-        {/* Header Background Image */}
+        {/* Header Background Image - Flex Board */}
         <div className="absolute inset-0 bg-gray-900">
           <img
-            src="/header.jpg"
+            src="/flex-board.jpg"
             alt="VABE Shop"
             className="w-full h-full object-cover"
+            onError={(e) => {
+              // Fallback to header.jpg if flex-board.jpg doesn't exist
+              const target = e.target as HTMLImageElement;
+              if (target.src !== window.location.origin + '/header.jpg') {
+                target.src = '/header.jpg';
+              }
+            }}
           />
           </div>
         
@@ -119,13 +126,13 @@ export function Home({ setCurrentPage }: HomeProps) {
             </div>
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-700 text-lg leading-relaxed text-center">
-                Welcome to VABE, your trusted partner for professional wheel alignment and tire services. 
+                Welcome to VABE, your trusted partner for professional wheel alignment and tyre services. 
                 With years of experience in the automotive industry, we are committed to providing exceptional 
                 service and ensuring your vehicle's safety and performance. Our team of certified technicians 
-                uses state-of-the-art equipment to deliver precise wheel alignment, professional tire balancing, 
-                and comprehensive tire care services. Located in Sai Nagar, Mamurdi, Pimpri-Chinchwad, we pride 
+                uses state-of-the-art equipment to deliver precise wheel alignment, professional tyre balancing, 
+                and comprehensive tyre care services. Located in Gahunje, Pune, we pride 
                 ourselves on quick service, honest pricing, and customer satisfaction. Whether you need a simple 
-                tire rotation or complex wheel alignment, we're here to help keep your vehicle running smoothly 
+                tyre rotation or complex wheel alignment, we're here to help keep your vehicle running smoothly 
                 and safely.
               </p>
             </div>
@@ -159,7 +166,7 @@ export function Home({ setCurrentPage }: HomeProps) {
           <div className="text-center mb-12">
             <h2 className="text-3xl mb-4">Our Services</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We specialize in wheel alignment, balancing, and tire services to keep your vehicle running smoothly and safely.
+              We specialize in wheel alignment, balancing, and tyre services to keep your vehicle running smoothly and safely.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -219,14 +226,17 @@ export function Home({ setCurrentPage }: HomeProps) {
               <Phone className="w-6 h-6" />
               <div>
                 <div className="text-sm text-white/70">Call Us</div>
-                <a href="tel:+15551234567" className="text-lg">(555) 123-4567</a>
+                <div className="text-lg">
+                  <a href="tel:+919370047020" className="block">+91 9370047020</a>
+                  <a href="tel:+919427860992" className="block">+91 9427860992</a>
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="w-6 h-6" />
               <div>
                 <div className="text-sm text-white/70">Visit Us</div>
-                <div className="text-lg">Sai Nagar, Mamurdi, Pimpri-Chinchwad</div>
+                <div className="text-lg">Gat no 196/1, Besides Morya Fibers, Opp. Orbis School, Gahunje stadium road, Gahunje, Pune 412101</div>
               </div>
             </div>
           </div>

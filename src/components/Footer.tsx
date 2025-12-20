@@ -20,7 +20,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-white/80 text-sm">
-              Your trusted local tire shop for professional wheel alignment, balancing, and tire services since 2010.
+              Your trusted local tyre shop for professional wheel alignment, balancing, and tyre services since 2010.
             </p>
           </div>
 
@@ -30,9 +30,10 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5" />
-                <a href="tel:+15551234567" className="hover:text-[#eab308] text-white/80">
-                  (555) 123-4567
-                </a>
+                <div className="text-white/80">
+                  <a href="tel:+919370047020" className="hover:text-[#eab308] block">+91 9370047020</a>
+                  <a href="tel:+919427860992" className="hover:text-[#eab308] block">+91 9427860992</a>
+                </div>
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5" />
@@ -43,9 +44,10 @@ export function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5" />
                 <div className="text-white/80">
-                  MPC5+CXC, Sai Nagar Rd, Sai Nagar<br />
-                  Mamurdi, Pimpri-Chinchwad<br />
-                  Dehu Road, Maharashtra 412101
+                  VABE (Vehicles Alignment Balancing Enterprise)<br />
+                  Gat no 196/1, Besides Morya Fibers<br />
+                  Opp. Orbis School, Gahunje stadium road<br />
+                  Gahunje, Pune 412101
                 </div>
               </div>
             </div>
@@ -56,16 +58,8 @@ export function Footer() {
             <h4 className="mb-4">Business Hours</h4>
             <div className="space-y-2 text-sm text-white/80 mb-6">
               <div className="flex justify-between">
-                <span>Mon - Fri</span>
-                <span>8:00 AM - 6:00 PM</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Saturday</span>
-                <span>9:00 AM - 4:00 PM</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Sunday</span>
-                <span>Closed</span>
+                <span>All Days</span>
+                <span>9:00 AM - 9:00 PM</span>
               </div>
             </div>
           </div>

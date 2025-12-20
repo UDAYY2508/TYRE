@@ -14,22 +14,22 @@ export function Services({ setCurrentPage }: ServicesProps) {
     {
       icon: <Settings className="w-10 h-10" />,
       title: 'Wheel Alignment',
-      description: 'Precision computerized alignment to correct steering angles and ensure optimal tire contact with the road. Prevents uneven tire wear and improves fuel efficiency.'
+      description: 'Precision computerized alignment to correct steering angles and ensure optimal tyre contact with the road. Prevents uneven tyre wear and improves fuel efficiency.'
     },
     {
       icon: <Wrench className="w-10 h-10" />,
       title: 'Wheel Balancing',
-      description: 'Expert balancing using state-of-the-art equipment to distribute weight evenly around your wheels. Eliminates vibrations and extends tire life.'
+      description: 'Expert balancing using state-of-the-art equipment to distribute weight evenly around your wheels. Eliminates vibrations and extends tyre life.'
     },
     {
       icon: <CheckCircle className="w-10 h-10" />,
-      title: 'Tire Inspection',
-      description: 'Comprehensive tire health check including tread depth, air pressure, and visual inspection for damage or irregular wear patterns.'
+      title: 'Tyre Inspection',
+      description: 'Comprehensive tyre health check including tread depth, air pressure, and visual inspection for damage or irregular wear patterns.'
     },
     {
       icon: <Gauge className="w-10 h-10" />,
-      title: 'Tire Rotation',
-      description: 'Regular rotation service to ensure even tire wear across all four tires, maximizing their lifespan and maintaining consistent performance.'
+      title: 'Tyre Rotation',
+      description: 'Regular rotation service to ensure even tyre wear across all four tyres, maximizing their lifespan and maintaining consistent performance.'
     },
     {
       icon: <Shield className="w-10 h-10" />,
@@ -50,7 +50,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl mb-4">Our Services</h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Professional tire and wheel services to keep your vehicle safe, efficient, and running smoothly.
+            Professional tyre and wheel services to keep your vehicle safe, efficient, and running smoothly.
           </p>
         </div>
       </section>
