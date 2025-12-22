@@ -30,6 +30,18 @@ export function BookAppointment() {
         throw new Error('EmailJS is not configured. Please check the setup instructions.');
       }
 
+      // Get current date and time for the email
+      const now = new Date();
+      const currentTime = now.toLocaleString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+
       // Prepare template parameters
       const templateParams = {
         from_name: formData.name,
@@ -38,6 +50,7 @@ export function BookAppointment() {
         preferred_date: formData.date,
         preferred_time: formData.time,
         message: formData.message || 'No additional information provided',
+        current_time: currentTime,
         to_email: EMAILJS_CONFIG.RECEIVER_EMAIL || 'vabe2023@gmail.com',
       };
 
@@ -169,15 +182,18 @@ export function BookAppointment() {
                     </div>
 
                     <div>
-                      <Label htmlFor="message">Additional Information</Label>
+                      <Label htmlFor="message">Your Message / Additional Information</Label>
                       <Textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Let us know if you have any specific concerns or service requests..."
+                        placeholder="Type your message here... Let us know if you have any specific concerns, service requests, or questions..."
                         className="mt-1 min-h-[120px]"
                       />
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Your message will be sent directly to us. Please include any details about your vehicle or service needs.
+                      </p>
                     </div>
 
                     <Button 
@@ -226,8 +242,8 @@ export function BookAppointment() {
                     <div>
                       <div className="text-sm text-muted-foreground">Address</div>
                       <div>VABE (Vehicles Alignment Balancing Enterprise)</div>
-                      <div>Gat no 196/1, Besides Morya Fibers</div>
-                      <div>Opp. Orbis School, Gahunje stadium road</div>
+                      <div>Gat no 196 / 1, Shop no 2, Besides Morya Fiber</div>
+                      <div>Opp. Orbis school, Gahunje stadium road</div>
                       <div>Gahunje, Pune 412101</div>
                     </div>
                   </div>
@@ -292,7 +308,7 @@ export function BookAppointment() {
               <CardContent>
                 <div className="w-full h-96 rounded-lg overflow-hidden border">
                   <iframe
-                    src="https://www.google.com/maps?q=VABE+Vehicles+Alignment+Balancing+Enterprise,+Gat+no+196/1,+Besides+Morya+Fibers,+Opp.+Orbis+School,+Gahunje+stadium+road,+Gahunje,+Pune+412101&output=embed"
+                    src="https://www.google.com/maps?q=VABE,+Gat+no+196+/+1,+Shop+no+2,+Besides+Morya+Fiber,+Opp.+Orbis+school,+Gahunje+stadium+road,+Gahunje,+Pune+412101&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -314,7 +330,7 @@ export function BookAppointment() {
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Visit us at: VABE (Vehicles Alignment Balancing Enterprise), Gat no 196/1, Besides Morya Fibers, Opp. Orbis School, Gahunje stadium road, Gahunje, Pune 412101
+                  Visit us at: VABE, Gat no 196 / 1, Shop no 2, Besides Morya Fiber, Opp. Orbis school, Gahunje stadium road, Gahunje, Pune 412101
                 </p>
               </CardContent>
             </Card>

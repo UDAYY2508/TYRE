@@ -236,7 +236,7 @@ export function Home({ setCurrentPage }: HomeProps) {
               <MapPin className="w-6 h-6" />
               <div>
                 <div className="text-sm text-white/70">Visit Us</div>
-                <div className="text-lg">Gat no 196/1, Besides Morya Fibers, Opp. Orbis School, Gahunje stadium road, Gahunje, Pune 412101</div>
+                <div className="text-lg">VABE, Gat no 196 / 1, Shop no 2, Besides Morya Fiber, Opp. Orbis school, Gahunje stadium road, Gahunje, Pune 412101</div>
               </div>
             </div>
           </div>

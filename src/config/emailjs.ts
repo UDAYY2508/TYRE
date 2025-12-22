@@ -9,17 +9,23 @@
  * 5. Fill in the values below
  */
 
+// Helper to safely access environment variables
+const getEnvVar = (key: string, defaultValue: string = ''): string => {
+  const env = (import.meta as unknown as { env: Record<string, string | undefined> }).env;
+  return env?.[key] || defaultValue;
+};
+
 export const EMAILJS_CONFIG = {
   // Your EmailJS Service ID (found in Email Services)
-  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+  SERVICE_ID: getEnvVar('VITE_EMAILJS_SERVICE_ID', ''),
 
   // Your EmailJS Template ID (found in Email Templates)
-  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+  TEMPLATE_ID: getEnvVar('VITE_EMAILJS_TEMPLATE_ID', ''),
 
   // Your EmailJS Public Key (found in Account > API Keys)
-  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '',
+  PUBLIC_KEY: getEnvVar('VITE_EMAILJS_PUBLIC_KEY', ''),
 
   // Email address where appointment requests will be sent
-  RECEIVER_EMAIL: import.meta.env.VITE_RECEIVER_EMAIL || 'vabe2023@gmail.com',
+  RECEIVER_EMAIL: getEnvVar('VITE_RECEIVER_EMAIL', 'vabe2023@gmail.com'),
 };
 

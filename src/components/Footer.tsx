@@ -45,8 +45,8 @@ export function Footer() {
                 <MapPin className="w-4 h-4 mt-0.5" />
                 <div className="text-white/80">
                   VABE (Vehicles Alignment Balancing Enterprise)<br />
-                  Gat no 196/1, Besides Morya Fibers<br />
-                  Opp. Orbis School, Gahunje stadium road<br />
+                  Gat no 196 / 1, Shop no 2, Besides Morya Fiber<br />
+                  Opp. Orbis school, Gahunje stadium road<br />
                   Gahunje, Pune 412101
                 </div>
               </div>
