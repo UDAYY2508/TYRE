@@ -45,6 +45,7 @@ export function BookAppointment() {
       // Prepare template parameters
       const templateParams = {
         from_name: formData.name,
+        name: formData.name, // Alias for template compatibility
         from_phone: formData.phone,
         vehicle: formData.vehicle,
         preferred_date: formData.date,
@@ -52,6 +53,8 @@ export function BookAppointment() {
         message: formData.message || 'No additional information provided',
         current_time: currentTime,
         to_email: EMAILJS_CONFIG.RECEIVER_EMAIL || 'vabe2023@gmail.com',
+        title: `New Appointment Request from ${formData.name}`, // For subject line
+        email: '', // Email field not in form, but template expects it
       };
 
       // Send email using EmailJS

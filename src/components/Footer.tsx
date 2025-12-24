@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, Mail } from 'lucide-react';
+import { Phone, MapPin, Mail, Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -20,7 +20,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-white/80 text-sm">
-              Your trusted local tyre shop for professional wheel alignment, balancing, and tyre services since 2010.
+              Your trusted local tyre shop for professional wheel alignment, balancing, and tyre services since 2023.
             </p>
           </div>
 
@@ -60,6 +60,29 @@ export function Footer() {
               <div className="flex justify-between">
                 <span>All Days</span>
                 <span>9:00 AM - 9:00 PM</span>
+              </div>
+            </div>
+            <div className="mt-6">
+              <h4 className="mb-4">Follow Us</h4>
+              <div className="flex gap-4">
+                <a 
+                  href="https://www.facebook.com/vabe2023@gmail.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#eab308] transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/vabe_align" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#eab308] transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-6 h-6" />
+                </a>
               </div>
             </div>
           </div>

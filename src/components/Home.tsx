@@ -53,18 +53,18 @@ export function Home({ setCurrentPage }: HomeProps) {
 
   const testimonials = [
     {
-      name: 'Harshad',
-      text: 'I recently used VABE for my travel needs, and i had fantastic experience! The interiors of vehicle were great, clean and comfortable.',
+      name: 'Appasaheb Pujari',
+      text: 'Best center for Car alignment and balancing, Owner had good knowledge and good staff.',
       rating: 5
     },
     {
-      name: 'SP lakhe',
-      text: 'VABE offers an exceptional range of vehicle products that are both reasonably priced and high in quality. The hassle-free experience from purchase to installation is commendable, making it a great choice for anyone looking for quality vehicle products.',
+      name: 'Vijay Chheda',
+      text: 'One stop. Reasonable charges.',
       rating: 5
     },
     {
-      name: 'Ganesh sonawane',
-      text: 'I had an excellent interaction with VABE, a vehicle products company. The experience was hassle-free, which made everything easy and smooth.',
+      name: 'Hema Hergan',
+      text: 'Very professional and prompt service.',
       rating: 5
     },
   
