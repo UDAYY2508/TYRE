@@ -79,6 +79,10 @@ This guide will walk you through connecting Gmail to your booking appointment fo
            <td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #333;">{{from_phone}}</td>
          </tr>
          <tr>
+           <td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #666;">Email:</td>
+           <td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #333;">{{from_email}}</td>
+         </tr>
+         <tr>
            <td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #666;">Vehicle:</td>
            <td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #333;">{{vehicle}}</td>
          </tr>
@@ -112,6 +116,7 @@ This guide will walk you through connecting Gmail to your booking appointment fo
    APPOINTMENT DETAILS:
    Name: {{from_name}}
    Phone: {{from_phone}}
+   Email: {{from_email}}
    Vehicle: {{vehicle}}
    Preferred Date: {{preferred_date}}
    Preferred Time: {{preferred_time}}
@@ -184,6 +189,7 @@ VITE_RECEIVER_EMAIL=vabe2023@gmail.com
 3. Fill out the form with test data:
    - Name: Test User
    - Phone: +91 9370047020
+   - Email: test@example.com
    - Vehicle: Test Vehicle
    - Date: Select a future date
    - Time: Select a time
@@ -275,7 +281,7 @@ This error means your Gmail OAuth token has expired. Follow these steps:
 - Check EmailJS dashboard → Email Logs
 - Verify email service is active (green status)
 - Check if you've exceeded free tier limit (200 emails/month)
-- Verify template has correct variable names: `{{from_name}}`, `{{from_phone}}`, etc.
+- Verify template has correct variable names: `{{from_name}}`, `{{from_phone}}`, `{{from_email}}`, etc.
 
 ---
 

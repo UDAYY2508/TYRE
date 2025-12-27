@@ -13,6 +13,7 @@ export function BookAppointment() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     vehicle: '',
     date: '',
     time: '',
@@ -45,16 +46,14 @@ export function BookAppointment() {
       // Prepare template parameters
       const templateParams = {
         from_name: formData.name,
-        name: formData.name, // Alias for template compatibility
         from_phone: formData.phone,
+        from_email: formData.email,
         vehicle: formData.vehicle,
         preferred_date: formData.date,
         preferred_time: formData.time,
         message: formData.message || 'No additional information provided',
         current_time: currentTime,
         to_email: EMAILJS_CONFIG.RECEIVER_EMAIL || 'vabe2023@gmail.com',
-        title: `New Appointment Request from ${formData.name}`, // For subject line
-        email: '', // Email field not in form, but template expects it
       };
 
       // Send email using EmailJS
@@ -71,6 +70,7 @@ export function BookAppointment() {
       setFormData({
         name: '',
         phone: '',
+        email: '',
         vehicle: '',
         date: '',
         time: '',
@@ -141,6 +141,20 @@ export function BookAppointment() {
                           className="mt-1"
                         />
                       </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="email">Email Address *</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="your.email@example.com"
+                        className="mt-1"
+                      />
                     </div>
 
                     <div>

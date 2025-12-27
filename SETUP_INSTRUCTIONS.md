@@ -35,6 +35,7 @@ You have received a new appointment request:
 
 Name: {{from_name}}
 Phone: {{from_phone}}
+Email: {{from_email}}
 Vehicle: {{vehicle}}
 Preferred Date: {{preferred_date}}
 Preferred Time: {{preferred_time}}
