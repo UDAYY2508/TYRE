@@ -103,12 +103,25 @@ export function Home({ setCurrentPage }: HomeProps) {
               <p className="text-white/90 text-lg md:text-xl mb-8">
                 VEHICLES ALIGNMENT BALANCING ENTERPRISE
               </p>
-              <div className="flex justify-center">
+              <div className="flex justify-center gap-4 flex-wrap">
                 <Button 
                   onClick={() => setCurrentPage('book')}
                   className="bg-[#eab308] hover:bg-[#ca9a04] text-black px-8 py-6 text-lg"
                 >
                   Book Appointment
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-[#eab308] text-[#eab308] hover:bg-[#eab308] hover:text-black px-8 py-6 text-lg bg-black/60"
+                  onClick={() =>
+                    window.open(
+                      'https://g.page/r/CVjgB5BnR6kREBE/review',
+                      '_blank',
+                      'noopener,noreferrer'
+                    )
+                  }
+                >
+                  Add Review
                 </Button>
               </div>
             </div>
@@ -214,6 +227,21 @@ export function Home({ setCurrentPage }: HomeProps) {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button
+              variant="outline"
+              className="border-[#eab308] text-[#eab308] hover:bg-[#eab308] hover:text-black"
+              onClick={() =>
+                window.open(
+                  'https://maps.app.goo.gl/PmQY7cvyehS542r26?g_st=awb',
+                  '_blank',
+                  'noopener,noreferrer'
+                )
+              }
+            >
+              Add Review
+            </Button>
           </div>
         </div>
       </section>
