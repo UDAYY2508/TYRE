@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, Wrench, Settings, CheckCircle, Star } from 'lucide-react';
+import { Phone, MapPin, Wrench, Settings, CheckCircle, Star, BatteryFull, BatteryCharging, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 
@@ -67,16 +67,16 @@ export function Home({ setCurrentPage }: HomeProps) {
       text: 'Very professional and prompt service.',
       rating: 5
     },
-  
+
   ];
 
   return (
     <div>
-        <section className="relative h-[500px] md:h-[600px] overflow-hidden">
+      <section className="relative h-[500px] md:h-[600px] overflow-hidden">
         {/* Header Background Image - Flex Board */}
-        <div className="absolute inset-0 bg-gray-900">
+        <div className="absolute inset-0 bg-gray-700">
           <img
-            src="/flex-board.jpg"
+            src="/new-updated-banner.png"
             alt="VABE Shop"
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -87,24 +87,24 @@ export function Home({ setCurrentPage }: HomeProps) {
               }
             }}
           />
-          </div>
-        
+        </div>
+
         {/* Dark Overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/60"></div>
-        
+
         {/* Content */}
         <div className="relative h-full flex items-center">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
               <h1 className="text-white text-4xl md:text-6xl mb-4">
                 VABE
-                 Tyres and Alignment Services
+                Tyres and Alignment Services
               </h1>
               <p className="text-white/90 text-lg md:text-xl mb-8">
                 VEHICLES ALIGNMENT BALANCING ENTERPRISE
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
-                <Button 
+                <Button
                   onClick={() => setCurrentPage('book')}
                   className="bg-[#eab308] hover:bg-[#ca9a04] text-black px-8 py-6 text-lg"
                 >
@@ -139,13 +139,13 @@ export function Home({ setCurrentPage }: HomeProps) {
             </div>
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-700 text-lg leading-relaxed text-center">
-                Welcome to VABE, your trusted partner for professional wheel alignment and tyre services. 
-                With years of experience in the automotive industry, we are committed to providing exceptional 
-                service and ensuring your vehicle's safety and performance. Our team of certified technicians 
-                uses state-of-the-art equipment to deliver precise wheel alignment, professional tyre balancing, 
-                and comprehensive tyre care services. Located in Gahunje, Pune, we pride 
-                ourselves on quick service, honest pricing, and customer satisfaction. Whether you need a simple 
-                tyre rotation or complex wheel alignment, we're here to help keep your vehicle running smoothly 
+                Welcome to VABE, your trusted partner for professional wheel alignment and tyre services.
+                With years of experience in the automotive industry, we are committed to providing exceptional
+                service and ensuring your vehicle's safety and performance. Our team of certified technicians
+                uses state-of-the-art equipment to deliver precise wheel alignment, professional tyre balancing,
+                and comprehensive tyre care services. Located in Gahunje, Pune, we pride
+                ourselves on quick service, honest pricing, and customer satisfaction. Whether you need a simple
+                tyre rotation or complex wheel alignment, we're here to help keep your vehicle running smoothly
                 and safely.
               </p>
             </div>
@@ -196,7 +196,7 @@ export function Home({ setCurrentPage }: HomeProps) {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Button 
+            <Button
               onClick={() => setCurrentPage('services')}
               variant="outline"
               className="border-[#1e3a8a] text-[#1e3a8a] hover:bg-[#1e3a8a] hover:text-white"
@@ -204,6 +204,62 @@ export function Home({ setCurrentPage }: HomeProps) {
               View All Services
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Battery Services Section */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-6xl">
+
+          {/* Section Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl mb-4 font-semibold text-[#1e3a8a]">Battery Services</h2>
+            <div className="w-20 h-1 bg-[#eab308] mx-auto mb-6"></div>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+              Complete battery solutions for both 2-wheelers and 4-wheelers.
+            </p>
+          </div>
+
+          {/* Battery Banner */}
+          <div className="mb-16 overflow-hidden rounded-2xl shadow-lg border border-gray-100 bg-gray-50 transition-all duration-300 hover:shadow-xl hover:scale-[1.005]">
+            <img
+              src="/battery-banner.png"
+              alt="Battery Services Banner"
+              className="w-full h-auto object-contain mx-auto"
+            />
+          </div>
+
+          {/* Battery Service Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-2 hover:border-[#1e3a8a] transition-all hover:shadow-md">
+              <CardContent className="p-8 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#eab308] rounded-full mb-5 text-black">
+                  <BatteryFull className="w-8 h-8" />
+                </div>
+                <h3 className="mb-3">{`Batteries for 2 & 4 Wheelers`}</h3>
+                <p className="text-muted-foreground">{`Batteries available for both 2-wheelers and 4-wheelers. Trusted brands to keep your vehicle powered reliably.`}</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 hover:border-[#1e3a8a] transition-all hover:shadow-md">
+              <CardContent className="p-8 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#eab308] rounded-full mb-5 text-black">
+                  <BatteryCharging className="w-8 h-8" />
+                </div>
+                <h3 className="mb-3">{`Battery Charging Service`}</h3>
+                <p className="text-muted-foreground">{`Charging of batteries for both 2-wheelers and 4-wheelers. Restore your battery to full capacity with our efficient equipment.`}</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 hover:border-[#1e3a8a] transition-all hover:shadow-md">
+              <CardContent className="p-8 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#eab308] rounded-full mb-5 text-black">
+                  <Zap className="w-8 h-8" />
+                </div>
+                <h3 className="mb-3">{`Jump Start Service`}</h3>
+                <p className="text-muted-foreground">{`Jump start service for breakdown vehicles due to complete battery discharge. Get back on the road quickly with our rapid assistance.`}</p>
+              </CardContent>
+            </Card>
+          </div>
+
         </div>
       </section>
 

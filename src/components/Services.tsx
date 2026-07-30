@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings, Wrench, CheckCircle, Gauge, Shield, Clock } from 'lucide-react';
+import { Settings, Wrench, CheckCircle, Gauge, Shield, Clock, BatteryFull, BatteryCharging, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 
@@ -74,6 +74,62 @@ export function Services({ setCurrentPage }: ServicesProps) {
         </div>
       </section>
 
+      {/* Battery Services Section */}
+      <section className="py-20 bg-gray-50 border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-6xl">
+
+          {/* Section Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl mb-4 font-semibold text-[#1e3a8a]">Battery Services</h2>
+            <div className="w-20 h-1 bg-[#eab308] mx-auto mb-6"></div>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+              Complete battery solutions for both 2-wheelers and 4-wheelers.
+            </p>
+          </div>
+
+          {/* Battery Banner */}
+          <div className="mb-16 overflow-hidden rounded-2xl shadow-lg border border-gray-200/50 bg-white transition-all duration-300 hover:shadow-xl hover:scale-[1.005]">
+            <img
+              src="/battery-banner.png"
+              alt="Battery Services Banner"
+              className="w-full h-auto object-contain mx-auto"
+            />
+          </div>
+
+          {/* Battery Service Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-2 hover:border-[#1e3a8a] transition-all hover:shadow-lg bg-white">
+              <CardContent className="p-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#eab308] rounded-full mb-6 text-black">
+                  <BatteryFull className="w-10 h-10" />
+                </div>
+                <h3 className="mb-3">{`Batteries for 2 & 4 Wheelers`}</h3>
+                <p className="text-muted-foreground">{`Batteries available for both 2-wheelers and 4-wheelers. Trusted brands to keep your vehicle powered reliably.`}</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 hover:border-[#1e3a8a] transition-all hover:shadow-lg bg-white">
+              <CardContent className="p-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#eab308] rounded-full mb-6 text-black">
+                  <BatteryCharging className="w-10 h-10" />
+                </div>
+                <h3 className="mb-3">{`Battery Charging Service`}</h3>
+                <p className="text-muted-foreground">{`Charging of batteries for both 2-wheelers and 4-wheelers. Restore your battery to full capacity with our efficient equipment.`}</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 hover:border-[#1e3a8a] transition-all hover:shadow-lg bg-white">
+              <CardContent className="p-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#eab308] rounded-full mb-6 text-black">
+                  <Zap className="w-10 h-10" />
+                </div>
+                <h3 className="mb-3">{`Jump Start Service`}</h3>
+                <p className="text-muted-foreground">{`Jump start service for breakdown vehicles due to complete battery discharge. Get back on the road quickly with our rapid-response assistance.`}</p>
+              </CardContent>
+            </Card>
+          </div>
+
+        </div>
+      </section>
+
       {/* Images Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -90,7 +146,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
               <div className="bg-white p-4">
                 <h4>Tyre Changer and fixing Machine</h4>
                 <p className="text-muted-foreground text-sm mt-1">
-                Allows safe and quick tyre removal, fitting, and repair without damaging the tyre or rim.
+                  Allows safe and quick tyre removal, fitting, and repair without damaging the tyre or rim.
                 </p>
               </div>
             </div>
@@ -105,7 +161,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
               <div className="bg-white p-4">
                 <h4>Air/Nitrogen filling machine</h4>
                 <p className="text-muted-foreground text-sm mt-1">
-                Provides nitrogen inflation to maintain consistent tyre pressure, improving fuel efficiency and tyre durability.
+                  Provides nitrogen inflation to maintain consistent tyre pressure, improving fuel efficiency and tyre durability.
                 </p>
               </div>
             </div>
@@ -120,7 +176,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
               <div className="bg-white p-4">
                 <h4>Wheel Alignment Machine</h4>
                 <p className="text-muted-foreground text-sm mt-1">
-                Ensures precise wheel alignment for smoother handling, improved vehicle stability, and longer tyre life.
+                  Ensures precise wheel alignment for smoother handling, improved vehicle stability, and longer tyre life.
                 </p>
               </div>
             </div>
@@ -135,7 +191,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
               <div className="bg-white p-4">
                 <h4>Balancing Machine</h4>
                 <p className="text-muted-foreground text-sm mt-1">
-                Balances wheels accurately to reduce vibrations, ensuring a comfortable ride and even tyre wear.
+                  Balances wheels accurately to reduce vibrations, ensuring a comfortable ride and even tyre wear.
                 </p>
               </div>
             </div>
@@ -150,7 +206,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
               <div className="bg-white p-4">
                 <h4>8KV Inverter Backup Support System</h4>
                 <p className="text-muted-foreground text-sm mt-1">
-                Ensures uninterrupted service during power outages, keeping all machines running smoothly.
+                  Ensures uninterrupted service during power outages, keeping all machines running smoothly.
                 </p>
               </div>
             </div>
@@ -217,7 +273,7 @@ export function Services({ setCurrentPage }: ServicesProps) {
           <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
             Book an appointment today and experience professional service at affordable prices.
           </p>
-          <Button 
+          <Button
             onClick={() => setCurrentPage('book')}
             className="bg-[#eab308] hover:bg-[#ca9a04] text-black px-8 py-6 text-lg"
           >
