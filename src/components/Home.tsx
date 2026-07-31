@@ -97,11 +97,10 @@ export function Home({ setCurrentPage }: HomeProps) {
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
               <h1 className="text-white text-4xl md:text-6xl mb-4">
-                VABE
-                Tyres and Alignment Services
+                VABE TYRES
               </h1>
               <p className="text-white/90 text-lg md:text-xl mb-8">
-                VEHICLES ALIGNMENT BALANCING ENTERPRISE
+                Alignment Balancing services and Battery sales services
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
                 <Button
