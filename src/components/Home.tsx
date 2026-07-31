@@ -99,7 +99,7 @@ export function Home({ setCurrentPage }: HomeProps) {
               <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6">
                 VABE TYRES
               </h1>
-              <p className="text-white/90 text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
+              <p className="text-white/90 text-2xl md:text-3xl mb-10 max-w-2xl mx-auto">
                 Alignment Balancing services and Battery sales services
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
