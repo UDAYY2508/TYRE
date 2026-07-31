@@ -95,11 +95,11 @@ export function Home({ setCurrentPage }: HomeProps) {
         {/* Content */}
         <div className="relative h-full flex items-center">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6">
+            <div className="max-w-2xl mx-auto text-center">
+              <h1 className="text-white text-4xl md:text-6xl mb-4">
                 VABE TYRES
               </h1>
-              <p className="text-white/90 text-2xl md:text-3xl mb-10 max-w-2xl mx-auto">
+              <p className="text-white/90 text-lg md:text-xl mb-8">
                 Alignment Balancing services and Battery sales services
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
